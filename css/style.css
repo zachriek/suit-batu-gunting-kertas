@@ -1,0 +1,561 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* Import Font */
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src: url(../fonts/Montserrat-Bold.otf);
+}
+
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src: url(../fonts/Montserrat-Medium.otf);
+}
+
+
+/* HTML, Body */
+html {
+    position: relative;
+}
+
+body {
+    background: #fafafa;
+    font-family: 'Montserrat-Bold', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navigasi */
+.menu-container {
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    background-color: #000;
+    z-index: 5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.menu-toggle,
+.menu {
+    display: none;
+}
+
+.menu-container .logo h4 {
+    font-size: 1.7rem;
+    font-family: 'Montserrat-Bold';
+}
+
+.menu-container ul {
+    display: flex;
+    width: 50%;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.menu-container ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: 'Montserrat-Medium';
+    text-decoration: none;
+    font-size: 0.9rem;
+    background-color: #000;
+    border-radius: 5px;
+    padding: 5px 12px;
+    transition: background-color .3s,
+                color .3s;
+}
+
+.menu-container ul li a:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+
+/* Batu Gunting Kertas */
+/* Judul-1 h1 */
+.judul-1 {
+    font-size: calc(1.8vw + 1em);
+    text-align: center;
+    margin: 10px 0;
+    margin-top: 100px;
+    color: #000;
+    text-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* Container */
+.container {
+    padding-bottom: 100px;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Score */
+.score {
+    width: 50%;
+    height: 50px;
+    margin: 50px auto 25px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 40px;
+    color: rgba(0, 0, 0, 0.9);
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(245,245,245,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f5f5f5', GradientType=0 );
+    box-sizing: border-box;
+    -webkit-box-shadow: 0px 10px 30px -10px rgba(0,0,0,0.33);
+    -moz-box-shadow: 0px 10px 30px -10px rgba(0,0,0,0.33);
+    box-shadow: 0px 10px 30px -10px rgba(0,0,0,0.33);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+
+/* Computer Area */
+.computer-area {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(245,245,245,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f5f5f5', GradientType=0 );
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 40px;
+    -webkit-box-shadow: 0px 10px 30px -10px rgba(0,0,0,0.33);
+    -moz-box-shadow: 0px 10px 30px -10px rgba(0,0,0,0.33);
+    box-shadow: 0px 10px 30px -10px rgba(0,0,0,0.33);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/* Player Area */
+.player-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 250px;
+    background: rgba(245,245,245,1);
+    background: -moz-linear-gradient(top, rgba(245,245,245,1) 0%, rgba(255,255,255,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(245,245,245,1)), color-stop(100%, rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(top, rgba(245,245,245,1) 0%, rgba(255,255,255,1) 100%);
+    background: -o-linear-gradient(top, rgba(245,245,245,1) 0%, rgba(255,255,255,1) 100%);
+    background: -ms-linear-gradient(top, rgba(245,245,245,1) 0%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(to bottom, rgba(245,245,245,1) 0%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5f5f5', endColorstr='#ffffff', GradientType=0 );
+    border-radius: 40px;
+    -webkit-box-shadow: 0px 10px 30px -10px rgba(0,0,0,0.33);
+    -moz-box-shadow: 0px 10px 30px -10px rgba(0,0,0,0.33);
+    box-shadow: 0px 10px 30px -10px rgba(0,0,0,0.33);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.player-area ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Hasil Menang atau Kalah */
+.result {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 60px;
+    margin: 20px auto;
+    box-shadow: 0 5px 20px -10px rgba(0, 0, 0, 0.5);
+    background-color: #fff;
+    border-radius: 30px;;
+    text-align: center;
+    color: #000;
+    font-size: 26px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/* Image */
+.computer-area img,
+.player-area img {
+    width: 130px;
+    height: 130px;
+    border-radius: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 20px -10px rgba(0, 0, 0, 0.5);
+}
+
+.player-area li {
+    margin: 0 25px;
+}
+
+.batu, .gunting, .kertas {
+    transition: .3s;
+    position: relative;
+    top: 0;
+    cursor: pointer;
+}
+
+.batu:hover, .gunting:hover, .kertas:hover, .active {
+    -webkit-box-shadow: inset 0px 10px 30px -10px rgba(0,0,0,0.1);
+    -moz-box-shadow: inset 0px 10px 30px -10px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 25px -10px rgba(0, 0, 0, 0.8),
+                inset 0px 10px 30px -10px rgba(0,0,0,0.1);
+}
+
+.batu:active, .gunting:active, .kertas:active {
+    top: 5px;
+}
+
+/* Refresh Button */
+.refresh {
+    width: 50%;
+    height: 50px;
+    margin: 25px auto 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 40px;
+    color: rgba(0, 0, 0, 0.9);
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(100%, rgba(245,245,245,1)));
+    background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+    background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+    background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+    background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f5f5f5', GradientType=0 );
+    box-sizing: border-box;
+    -webkit-box-shadow: 0px 10px 30px -10px rgba(0,0,0,0.33);
+    -moz-box-shadow: 0px 10px 30px -10px rgba(0,0,0,0.33);
+    box-shadow: 0px 10px 30px -10px rgba(0,0,0,0.33);
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+    transition: .3s;
+}
+
+.refresh a {
+    width: 100%;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.9);
+    text-decoration: none;
+}
+
+.refresh:hover {
+    -webkit-box-shadow: inset 0px 10px 30px -10px rgba(0,0,0,0.1);
+    -moz-box-shadow: inset 0px 10px 30px -10px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 25px -10px rgba(0, 0, 0, 0.8),
+                inset 0px 10px 30px -10px rgba(0,0,0,0.1);
+}
+
+.refresh:active {
+    top: 5px;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Montserrat-Medium', sans-serif;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 100px;
+    background-color: #000;
+}
+
+footer p {
+    color: #fff;
+    font-size: 0.9em;
+}
+
+footer p a {
+    color: #fff;
+    text-decoration: none;
+}
+
+footer p a:hover,
+footer p a:active,
+footer p a:focus {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+/* Responsive */
+/* Ukuran Tablet */
+@media screen and ( max-width: 768px ) {
+    /* Navigasi */
+    .menu-container ul {
+        width: 60%
+    }
+
+    /* Batu Gunting Kertas */
+    /* Container */
+    .container {
+        width: 80vw;
+    }
+
+    /* Hasil Menang atau Kalah */
+    .result {
+        font-size: 22px;
+    }
+
+    /* Image */
+    .computer-area img,
+    .player-area img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .player-area li {
+        margin: 0 20px;
+    }
+
+    /* Refresh Button */
+    .refresh {
+        width: 200px;
+        height: 50px;
+    }
+
+    .refresh a {
+        width: 200px;
+        font-size: 20px;
+    }
+
+    /* Footer */
+    footer p {
+        font-size: 0.8em;
+    }
+
+/* Ukuran Mobile */
+@media screen and ( max-width: 576px ) {
+    /* Menu Utama */
+    .menu-container {
+        position: fixed;
+        display: flex;
+    }
+
+    /* Menu Toggle */
+    .menu-toggle {
+        display: block;
+    }
+
+    .toggler {
+        position: absolute;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        z-index: 3;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    .hamburger {
+        position: absolute;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: #000;
+    }
+
+    .hamburger > div {
+        position: absolute;
+        width: 60%;
+        height: 3px;
+        border-radius: 1.5px;
+        background-color: #fff;
+        transition: .4s;
+    }
+
+    .hamburger > div:before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        border-radius: 1.5px;
+        background-color: #fff;
+        transition: .4s;
+    }
+
+    .hamburger > div:after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        border-radius: 1.5px;
+        background-color: #fff;
+        transition: .4s;
+    }
+
+    .toggler:checked + .hamburger > div {
+        transform: rotate(135deg);
+    }
+
+    .toggler:checked:hover + .hamburger > div {
+        transform: rotate(225deg);
+    }
+
+    .toggler:checked + .hamburger > div:before,
+    .toggler:checked + .hamburger > div:after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+
+    /* Navigasi */
+    .menu-container ul {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: 1;
+        background-color: #000;
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: all 1s;
+    }
+
+    .menu-container ul.slide {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+     /* Batu Gunting Kertas */
+     .container {
+        width: 70%;
+     }
+
+     .computer-area,
+     .player-area {
+        height: 100px;
+     }
+
+     .player-area {
+        height: auto;
+     }
+
+     .score,
+     .result,
+     .refresh {
+        height: 30px;
+     }
+
+     .refresh {
+        width: 100px
+     }
+
+     .score h4,
+     .refresh a,
+     .result {
+        font-size: 12px;
+     }
+
+    .player-area li {
+        margin: 0 10px;
+    }
+
+    .computer-area img,
+    .player-area img {
+        border-radius: 20px;
+        width: calc(90px - 2rem);
+        height: calc(90px - 2rem);
+    }
+
+    .player-area ul {
+        padding: 20px;
+    }
+
+    footer p {
+        line-height: 15px;
+        font-size: 0.5rem;
+    }
+}
