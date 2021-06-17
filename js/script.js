@@ -1,11 +1,3 @@
-const menuUL = document.querySelector('.menu-container ul');
-const menuToggle = document.querySelector('.menu-toggle .toggler');
-
-menuToggle.addEventListener('click', function() {
-	menuUL.classList.toggle('slide');
-});
-
-
 // Suit Batu Gunting Kertas
 // PILIHAN COMPUTER
 function getPilihanComputer() {
