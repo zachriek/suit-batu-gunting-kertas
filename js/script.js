@@ -19,46 +19,53 @@ function getHasil(comp, player) {
 function putar() {
 	const imgComputer = document.querySelector('.computer-img');
 	const gambar = ['batu', 'kertas', 'gunting'];
+
 	let i = 0;
 	const waktuMulai = new Date().getTime();
 	setInterval(function () {
-		if (new Date().getTime() - waktuMulai > 1000) {
+		if (new Date().getTime() - waktuMulai > 2000) {
 			clearInterval;
 			return;
 		}
 		imgComputer.setAttribute('src', 'img/' + gambar[i++] + '.png');
 		if (i == gambar.length) i = 0;
+
+		screen.style.display = 'block';
 	}, 100)
 }
 
-// EVENT CLICK
-const pilihan = document.querySelectorAll('.player-area li img');
-let score = 0;
-pilihan.forEach(function (pil) {
-	pil.addEventListener('click', function () {
+// JALANKAN GAME
+function turnOn(e) {
+	if (e.target.className == 'batu' || e.target.className == 'gunting' || e.target.className == 'kertas') {
 		const pilihanComputer = getPilihanComputer();
-		const pilihanPlayer = pil.className;
+		const pilihanPlayer = e.target.className;
 		const hasil = getHasil(pilihanComputer, pilihanPlayer);
 
 		putar();
 
 		setTimeout(function () {
-		const imgComputer = document.querySelector('.computer-img');
-		imgComputer.setAttribute('src', 'img/' + pilihanComputer + '.png');
+			const imgComputer = document.querySelector('.computer-img');
+			imgComputer.setAttribute('src', 'img/' + pilihanComputer + '.png');
 
-		const result = document.querySelector('.result');
-		result.innerHTML = hasil;
-		}, 1000);
+			const result = document.querySelector('.result');
+			result.innerHTML = hasil;
 
-		setTimeout(function () {
 			const scoreText = document.querySelector('.score h4');
-			if (hasil === 'MENANG') {
-				score += 1;
-				scoreText.innerHTML = `SCORE : ${score}`;
-			} else if (hasil === 'KALAH') {
-				score -= 1;
-				scoreText.innerHTML = `SCORE : ${score}`;
-			}
-		}, 1100);
-	});
-});
+				if (hasil === 'MENANG') {
+						score++;
+						scoreText.innerHTML = `SCORE : ${score}`;
+					} else if (hasil === 'KALAH') {
+						score--;
+						scoreText.innerHTML = `SCORE : ${score}`;
+					}
+
+			screen.style.display = 'none';
+		}, 2000);
+	}
+}
+
+// EVENT CLICK / VARIABLE
+let score = 0;
+const playerArea = document.querySelector('.player-area');
+const screen = document.querySelector('.screen');
+playerArea.addEventListener('click', turnOn);
