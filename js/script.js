@@ -36,7 +36,7 @@ function putar() {
 			clearInterval;
 			return;
 		}
-		screen.style.display = 'block';
+		blockDisplay.style.display = 'block';
 	}, 100)
 }
 
@@ -66,23 +66,23 @@ function turnOn(e) {
 		}, 2000);
 
 		setTimeout(function() {
-			screen.style.display = 'none';
-			if (result.innerHTML == 'MENANG') winScreen.style.display = 'flex';
-			if (result.innerHTML == 'KALAH') loseScreen.style.display = 'flex';
+			blockDisplay.style.display = 'none';
+			if (result.innerHTML == 'MENANG') resultsDisplay[0].style.display = 'flex';
+			if (result.innerHTML == 'KALAH') resultsDisplay[1].style.display = 'flex';
 		}, 3000);
-
-		setTimeout(function() {
-			if (result.innerHTML == 'MENANG') winScreen.style.display = 'none';
-			if (result.innerHTML == 'KALAH') loseScreen.style.display = 'none';
-		}, 6000);
 	}
+}
+
+// MENGHAPUS TAMPILAN MENANG ATAU KALAH
+function removeResultDisplay() {
+	this.style.display = 'none';
 }
 
 // EVENT CLICK / VARIABLE
 let score = 0;
 const playerArea = document.querySelector('.player-area');
-const screen = document.querySelector('.screen');
+const blockDisplay = document.querySelector('.block-display');
 const result = document.querySelector('.result');
-const winScreen = document.querySelector('.win-screen');
-const loseScreen = document.querySelector('.lose-screen');
+const resultsDisplay = document.querySelectorAll('.display');
 playerArea.addEventListener('click', turnOn);
+resultsDisplay.forEach(result => result.addEventListener('click', removeResultDisplay));
