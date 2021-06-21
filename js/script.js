@@ -40,6 +40,22 @@ function putar() {
 	}, 100)
 }
 
+// SCORE
+class Score {
+	constructor() {
+		this.score = 0;
+	}
+
+	addScore() {
+		return ++this.score;
+	}
+
+	minScore() {
+		return --this.score;
+	}
+}
+const score = new Score();
+
 // JALANKAN GAME
 function turnOn(e) {
 	if (e.target.className == 'batu' || e.target.className == 'gunting' || e.target.className == 'kertas') {
@@ -57,11 +73,11 @@ function turnOn(e) {
 
 			const scoreText = document.querySelector('.score h4');
 				if (hasil === 'MENANG') {
-						score++;
-						scoreText.innerHTML = `SCORE : ${score}`;
+						score.addScore();
+						scoreText.innerHTML = `SCORE : ${score.score}`;
 					} else if (hasil === 'KALAH') {
-						score--;
-						scoreText.innerHTML = `SCORE : ${score}`;
+						score.minScore();
+						scoreText.innerHTML = `SCORE : ${score.score}`;
 					}
 		}, 2000);
 
@@ -79,7 +95,6 @@ function removeResultDisplay() {
 }
 
 // EVENT CLICK / VARIABLE
-let score = 0;
 const playerArea = document.querySelector('.player-area');
 const blockDisplay = document.querySelector('.block-display');
 const result = document.querySelector('.result');
