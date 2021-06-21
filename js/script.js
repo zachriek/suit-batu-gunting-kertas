@@ -29,7 +29,13 @@ function putar() {
 		}
 		imgComputer.setAttribute('src', 'img/' + gambar[i++] + '.png');
 		if (i == gambar.length) i = 0;
+	}, 100)
 
+	setInterval(function () {
+		if (new Date().getTime() - waktuMulai > 3000) {
+			clearInterval;
+			return;
+		}
 		screen.style.display = 'block';
 	}, 100)
 }
@@ -47,7 +53,6 @@ function turnOn(e) {
 			const imgComputer = document.querySelector('.computer-img');
 			imgComputer.setAttribute('src', 'img/' + pilihanComputer + '.png');
 
-			const result = document.querySelector('.result');
 			result.innerHTML = hasil;
 
 			const scoreText = document.querySelector('.score h4');
@@ -58,9 +63,18 @@ function turnOn(e) {
 						score--;
 						scoreText.innerHTML = `SCORE : ${score}`;
 					}
-
-			screen.style.display = 'none';
 		}, 2000);
+
+		setTimeout(function() {
+			screen.style.display = 'none';
+			if (result.innerHTML == 'MENANG') winScreen.style.display = 'flex';
+			if (result.innerHTML == 'KALAH') loseScreen.style.display = 'flex';
+		}, 3000);
+
+		setTimeout(function() {
+			if (result.innerHTML == 'MENANG') winScreen.style.display = 'none';
+			if (result.innerHTML == 'KALAH') loseScreen.style.display = 'none';
+		}, 6000);
 	}
 }
 
@@ -68,4 +82,7 @@ function turnOn(e) {
 let score = 0;
 const playerArea = document.querySelector('.player-area');
 const screen = document.querySelector('.screen');
+const result = document.querySelector('.result');
+const winScreen = document.querySelector('.win-screen');
+const loseScreen = document.querySelector('.lose-screen');
 playerArea.addEventListener('click', turnOn);
