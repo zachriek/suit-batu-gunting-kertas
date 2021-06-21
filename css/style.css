@@ -204,7 +204,7 @@ body {
 }
 
 .player-area li {
-    margin: 0 25px;
+    margin: 0 20px;
 }
 
 .batu, .gunting, .kertas {
@@ -332,6 +332,7 @@ footer {
      }
 
      .player-area ul {
+        padding-top: 20px;
         flex-direction: column;
      }
 
