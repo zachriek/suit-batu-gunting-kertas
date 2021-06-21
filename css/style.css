@@ -291,11 +291,6 @@ footer {
 /* Responsive */
 /* Ukuran Tablet */
 @media ( max-width: 768px ) {
-    .win-screen,
-    .lose-screen {
-        font-size: 3rem;
-    }
-
     .computer-area img,
     .player-area img {
         width: 110px;
@@ -315,7 +310,7 @@ footer {
 @media ( max-width: 576px ) {
     .win-screen,
     .lose-screen {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
      .container {
@@ -348,7 +343,7 @@ footer {
 @media ( max-width: 365px ) {
     .win-screen,
     .lose-screen {
-        font-size: 1rem;
+        font-size: 2rem;
     }
 
      .title h1 {
