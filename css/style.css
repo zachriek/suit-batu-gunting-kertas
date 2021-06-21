@@ -66,8 +66,7 @@ html {
 }
 
 body {
-    /*background: #fafafa;*/
-    background: url('../img/grey-brick.jpg') no-repeat;
+    background: url('../img/grey-brick.jpg');
     background-size: cover;
     font-family: 'Montserrat-Bold', sans-serif;
     overflow-x: hidden;
@@ -75,17 +74,23 @@ body {
 }
 
 /* Batu Gunting Kertas */
-/* Title */
-.title h1 {
-    font-size: 3rem;
-    text-align: center;
-    color: #333;
-    text-shadow: #eee 0 2px 0px, #333 0 4px 0px, 2px -17px 2px rgba(0,0,0,0);
-    text-transform: uppercase;
-    line-height: 50px;
+/* PESAN KETIKA MENANG 3X dan KETIKA KALAH 3X */
+.win-screen,
+.lose-screen {
+    color: #fff;
+    background-color: #000;
+    font-size: 4rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 20;
+    display: none;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Container */
 .container {
     max-width: 700px;
     display: flex;
@@ -93,7 +98,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin: 50px auto;
+    margin: 50px auto 100px;
     position: relative;
     padding-bottom: 50px;
 }
@@ -108,7 +113,15 @@ body {
     display: none;
 }
 
-/* Score */
+.title h1 {
+    font-size: 3rem;
+    text-align: center;
+    color: #333;
+    text-shadow: 0 0 10px rgba(0,0,0,0.3);
+    text-transform: uppercase;
+    line-height: 50px;
+}
+
 .score {
     margin: 50px auto 25px;
     padding: 10px 30px;
@@ -128,13 +141,12 @@ body {
     text-shadow: 1px 1px 1px rgba(0,0,0,.3);
 }
 
-/* Computer Area */
 .computer-area {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px 50px;
-   background: rgba(245,245,245,0.5);
+    background: rgba(245,245,245,0.5);
     position: relative;
     box-sizing: border-box;
     border-radius: 10px;
@@ -144,12 +156,11 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-/* Player Area */
 .player-area {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 50px;
+    padding: 20px;
     background: rgba(245,245,245,0.5);
     border-radius: 10px;
     -webkit-box-shadow: 0px 10px 30px -10px rgba(0,0,0,0.33);
@@ -165,17 +176,15 @@ body {
     flex-wrap: wrap;
 }
 
-/* Hasil Menang atau Kalah */
 .result {
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 20px auto;
-    width: 250px;
-    height: 40px;
+    padding: 10px 60px;
     box-shadow: 0 5px 20px -10px rgba(0, 0, 0, 0.5);
     background-color: #fff;
-    border-radius: 10px;;
+    border-radius: 10px;
     text-align: center;
     color: #000;
     font-size: 20px;
@@ -185,7 +194,6 @@ body {
     background: rgba(245,245,245,0.5);
 }
 
-/* Image */
 .computer-area img,
 .player-area img {
     width: 120px;
@@ -216,7 +224,6 @@ body {
     transform: scale(.9);
 }
 
-/* Refresh Button */
 .refresh {
     margin: 25px auto 0;
     padding: 10px 30px;
@@ -254,12 +261,17 @@ body {
     top: 5px;
 }
 
-/* Footer */
 footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 80px;
     font-family: 'Montserrat-Medium', sans-serif;
-    padding: 40px 0;
     background: #000;
     font-size: 12px;
+    position: absolute;
+    bottom: 0;
 }
 
 .copyright p {
@@ -279,6 +291,11 @@ footer {
 /* Responsive */
 /* Ukuran Tablet */
 @media ( max-width: 768px ) {
+    .win-screen,
+    .lose-screen {
+        font-size: 3rem;
+    }
+
     .computer-area img,
     .player-area img {
         width: 110px;
@@ -296,6 +313,11 @@ footer {
 
 /* Ukuran Mobile */
 @media ( max-width: 576px ) {
+    .win-screen,
+    .lose-screen {
+        font-size: 2rem;
+    }
+
      .container {
         width: 80%;
      }
@@ -318,13 +340,18 @@ footer {
      }
 
      footer {
-        font-size: 8px;
+        font-size: 10px;
      } 
 }
 
 @media ( max-width: 365px ) {
+    .win-screen,
+    .lose-screen {
+        font-size: 1rem;
+    }
+
      .title h1 {
-        font-size: 2.3rem;
+        font-size: 2rem;
      }
 
     .computer-area img,
@@ -351,8 +378,11 @@ footer {
      }
 
      .result {
-        width: 150px;
-        height: 40px;
+        padding: 10px 50px;
         font-size: 15px;
+     }
+
+     footer {
+        font-size: 6px;
      }
 }
