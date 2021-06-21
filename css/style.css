@@ -75,8 +75,7 @@ body {
 
 /* Batu Gunting Kertas */
 /* PESAN KETIKA MENANG 3X dan KETIKA KALAH 3X */
-.win-screen,
-.lose-screen {
+.display {
     color: #fff;
     background-color: #000;
     font-size: 4rem;
@@ -103,7 +102,7 @@ body {
     padding-bottom: 50px;
 }
 
-.screen {
+.block-display {
     position: absolute;
     top: 0;
     left: 0;
@@ -308,8 +307,7 @@ footer {
 
 /* Ukuran Mobile */
 @media ( max-width: 576px ) {
-    .win-screen,
-    .lose-screen {
+    .display {
         font-size: 3rem;
     }
 
@@ -322,17 +320,16 @@ footer {
         font-size: 2.3rem;
      }
 
-     .player-area {
-        padding: 20px;
-     }
-
      .player-area ul {
-        padding-top: 20px;
         flex-direction: column;
      }
 
      .player-area ul li {
-        padding-bottom: 20px;
+        margin: 10px 30px;
+     }
+
+     .player-area ul li:nth-child(2) {
+        margin: 10px 0;
      }
 
      footer {
@@ -341,8 +338,7 @@ footer {
 }
 
 @media ( max-width: 365px ) {
-    .win-screen,
-    .lose-screen {
+    .display {
         font-size: 2rem;
     }
 
